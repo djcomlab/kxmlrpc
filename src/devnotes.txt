@@ -1,0 +1,8 @@
+
+J2ME support in IntelliJ:
+
+https://www.jetbrains.com/help/idea/j2me.html
+
+Wireless Toolkit from Oracle:
+
+http://www.oracle.com/technetwork/java/sjwtoolkit-138075.html

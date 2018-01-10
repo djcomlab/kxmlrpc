@@ -1,23 +1,9 @@
-/* kxmlrpc - XML-RPC for J2ME
+/* kxmlrpc - XML-RPC client for J2ME
  *
  * Copyright (C) 2001  Kyle Gabhart ( kyle@gabhart.com )
- * 
- * Contributors: David Johnson ( djohnsonhk@users.sourceforge.net )
- * 				   Stefan Haustein 
  *
- * This library is free software; you can redistribute it and/or
- * modify it under the terms of the GNU Lesser General Public
- * License as published by the Free Software Foundation; either
- * version 2.1 of the License, or (at your option) any later version.
- *
- * This library is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
- * Lesser General Public License for more details.
- *
- * You should have received a copy of the GNU Lesser General Public
- * License along with this library; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA			   
+ * Contributors: David Johnson ( djcomlab )
+ * 				       Stefan Haustein
  */
 
 package org.kxmlrpc;
@@ -32,7 +18,7 @@ import org.kobjects.base64.Base64;
 import org.kxmlrpc.util.IsoDate;
 import org.kxml2.io.KXmlSerializer;
 
-/** 
+/**
  * This class builds XML-RPC method calls using the kxml pull parser's
  * KXmlSerializer class
  */
@@ -73,10 +59,10 @@ public class XmlRpcWriter {
 			writer.endTag(null, "params");
 		}//end if( params != null && params.size () > 0 )
 		writer.endTag(null, "methodCall");
-	}//end writeCall( String, Vector ) 
+	}//end writeCall( String, Vector )
 
 	/*
-	 * Maps from Java data types to XML-RPC data types and encodes the parameter 
+	 * Maps from Java data types to XML-RPC data types and encodes the parameter
 	 * value(s) using XML-RPC elements
 	 */
 	private void writeValue( Object value ) throws IOException {
@@ -100,7 +86,7 @@ public class XmlRpcWriter {
 		// XML-RPC dates must be formatted using the iso8601 standard
 		else if( value instanceof Date ) {
 			writer.startTag( null, "dateTime.iso8601" );
-			writer.text 
+			writer.text
 			( IsoDate.dateToString ( (Date) value ) );
 			writer.endTag(null, "dateTime.iso8601");
 		}

@@ -1,11 +1,11 @@
 /* IsoDate utility class for kXML-RPC
  *
- * This class replaces org.kobjects.isodate.IsoDate that as previously used by 
- * kxmlrpc for encoding and decoding Date to/from ISO8601 format. Previously it 
- * incorrectly coded to full ISO8601 format, when the XML-RPC specification uses 
+ * This class replaces org.kobjects.isodate.IsoDate that as previously used by
+ * kxmlrpc for encoding and decoding Date to/from ISO8601 format. Previously it
+ * incorrectly coded to full ISO8601 format, when the XML-RPC specification uses
  * a ISO8601-style format (which is NOT ISO8601 compliant).
  *
- * Copyright (C) 2007 David Johnson ( djohnsonhk@users.sourceforge.net )
+ * Copyright (C) 2007 David Johnson ( djcomlab )
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -19,7 +19,7 @@
  *
  * You should have received a copy of the GNU Lesser General Public
  * License along with this library; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA			   
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
 package org.kxmlrpc.util;
@@ -30,11 +30,11 @@ import java.util.TimeZone;
 
 
 public class IsoDate {
-    
+
      /*
       * Convert a Date object to an XML-RPC compliant string format
       */
-     public static String dateToString (Date date) {        
+     public static String dateToString (Date date) {
         Calendar c = Calendar.getInstance ();
 	c.setTime (date);
         String str = "";
@@ -52,12 +52,12 @@ public class IsoDate {
         int min = c.get (Calendar.MINUTE);
         if (min<10) str = str + '0';
         str = str + min + ':';
-        int sec = c.get (Calendar.SECOND);     
+        int sec = c.get (Calendar.SECOND);
         if (sec<10) str = str + '0';
         str = str + sec;
         return str;
      }
-     
+
      /*
       * Convert a XML-RPC compliant string format to Date object
       * Needs to throw some sort of exception if not correctly formed?
@@ -69,9 +69,9 @@ public class IsoDate {
          c.set(Calendar.DAY_OF_MONTH, Integer.parseInt(text.substring(6, 8)));
          c.set(Calendar.HOUR_OF_DAY, Integer.parseInt(text.substring(9, 11)));
          c.set(Calendar.MINUTE, Integer.parseInt(text.substring(12, 14)));
-         c.set(Calendar.SECOND, Integer.parseInt(text.substring(15)));  
+         c.set(Calendar.SECOND, Integer.parseInt(text.substring(15)));
          c.set(Calendar.MILLISECOND, 0);
          return c.getTime();
      }
-    
+
 }
