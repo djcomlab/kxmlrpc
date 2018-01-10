@@ -6,6 +6,6 @@ Read about SOA, mobile and kXML-RPC on DevX:
 
 ## Features
  - Implements the XML-RPC client specification.
- - Pull-based XML parsing provided through kXML2.
+ - Pull-based XML parsing provided through [kXML2](https://github.com/stefanhaustein/kxml2).
 
 Original repository on SourceForge: https://sourceforge.net/p/kxmlrpc/
